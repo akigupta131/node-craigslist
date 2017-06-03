@@ -47,8 +47,8 @@ function _getPostingDetails (postingUrl, markup) {
 
 	$('.print-qrcode-container').remove();
 
-	details.description = ($('#postingbody').text().replace($('.print-qrcode-container').text(), "").trim() || '').trim();
-	details.description_html = $('#postingbody').html().trim();
+	details.description = ($('#postingbody').text().replace($('.print-qrcode-container').text(), '').trim() || '').trim();
+	details.descriptionHtml = $('#postingbody').html().trim();
 	details.mapUrl = $('div.mapbox p.mapaddress')
 		.find('a')
 		.attr('href');
@@ -90,8 +90,8 @@ function _getPostingDetails (postingUrl, markup) {
 		});
 	} else {
 		try {
-			const single_img = $('.slide')[0].children[0].attribs.src;
-			details.images.push(single_img);
+			const singleImg = $('.slide')[0].children[0].attribs.src;
+			details.images.push(singleImg);
 		} catch (e) {
 			 debug('Image could not be fetched');
 		}
